@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>نفحات قطر | عود وبخور فاخر</title>
+  <meta name="description" content="صفحة هبوط عربية فاخرة لبيع العود والبخور في قطر، مع طلب سريع عبر واتساب وتوصيل داخل الدوحة وجميع مناطق قطر." />
+  <meta name="theme-color" content="#2a1409" />
+
+  <!-- خطوط عربية حديثة: العناوين بنوتو كوفي، والنصوص IBM Plex Sans Arabic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Noto+Kufi+Arabic:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --coffee:#2a1409;
+      --coffee-2:#3b1e0f;
+      --oud:#6f3b18;
+      --amber:#c8934d;
+      --gold:#f3d08a;
+      --sand:#fff7ea;
+      --cream:#fffaf1;
+      --muted:#8a6a4b;
+      --smoke:#f4eadb;
+      --ink:#22140d;
+      --white:#fff;
+      --shadow:0 24px 70px rgba(42,20,9,.16);
+      --radius:26px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"IBM Plex Sans Arabic", system-ui, sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 12% 10%, rgba(243,208,138,.23), transparent 28%),
+        radial-gradient(circle at 84% 2%, rgba(200,147,77,.22), transparent 24%),
+        linear-gradient(180deg, #fffaf1 0%, #fff7ea 40%, #f7ead7 100%);
+      overflow-x:hidden;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    button,input,textarea{font:inherit}
+    .container{width:min(1180px, calc(100% - 36px)); margin-inline:auto}
+    .kufi{font-family:"Noto Kufi Arabic", "IBM Plex Sans Arabic", sans-serif}
+
+    .announcement{
+      background:linear-gradient(90deg, var(--coffee), #4a270f, var(--coffee));
+      color:#fff3d8;
+      text-align:center;
+      padding:10px 18px;
+      font-weight:600;
+      font-size:14px;
+      letter-spacing:.1px;
+    }
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter:blur(18px);
+      background:rgba(255,250,241,.82);
+      border-bottom:1px solid rgba(111,59,24,.12);
+    }
+    .nav{
+      height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:max-content;
+    }
+    .logo{
+      width:48px;height:48px;border-radius:18px;
+      display:grid;place-items:center;
+      background:linear-gradient(145deg, #3b1e0f, #8b4a20 62%, #dca95e);
+      box-shadow:0 14px 30px rgba(111,59,24,.22);
+      position:relative;
+      overflow:hidden;
+    }
+    .logo:before{
+      content:"";position:absolute;inset:7px;border:1px solid rgba(255,239,198,.48);border-radius:14px;
+    }
+    .logo svg{width:27px;fill:#fff1cf;z-index:1}
+    .brand strong{display:block;font-size:19px;line-height:1.1;color:var(--coffee)}
+    .brand span{font-size:12px;color:var(--muted);font-weight:600}
+    .links{display:flex;align-items:center;gap:26px;color:#5c3a24;font-weight:600;font-size:15px}
+    .links a{transition:.2s ease}
+    .links a:hover{color:var(--oud)}
+    .nav-actions{display:flex;align-items:center;gap:10px}
+    .cart-pill{
+      display:flex;align-items:center;gap:8px;
+      border:1px solid rgba(111,59,24,.16);
+      background:rgba(255,255,255,.66);
+      padding:10px 14px;border-radius:999px;
+      color:var(--coffee);font-weight:700;
+      cursor:pointer;
+    }
+    .cart-count{
+      min-width:24px;height:24px;border-radius:99px;
+      background:var(--coffee);color:var(--gold);
+      display:grid;place-items:center;font-size:13px;
+    }
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:9px;
+      border:0;border-radius:999px;
+      padding:13px 22px;
+      font-weight:800;
+      cursor:pointer;
+      transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-primary{background:linear-gradient(135deg, var(--coffee), #7b421d);color:#fff3d7;box-shadow:0 18px 34px rgba(42,20,9,.2)}
+    .btn-primary:hover{box-shadow:0 22px 42px rgba(42,20,9,.28)}
+    .btn-gold{background:linear-gradient(135deg,#f8da9b,#c8934d);color:#2a1409;box-shadow:0 18px 34px rgba(200,147,77,.26)}
+    .btn-ghost{background:rgba(255,255,255,.58);border:1px solid rgba(111,59,24,.16);color:var(--coffee)}
+
+    .hero{
+      position:relative;
+      padding:76px 0 50px;
+      overflow:hidden;
+    }
+    .hero:before{
+      content:"";
+      position:absolute;
+      width:520px;height:520px;border-radius:50%;
+      background:radial-gradient(circle, rgba(200,147,77,.3), transparent 68%);
+      left:-180px;top:20px;filter:blur(8px);
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap:42px;
+      align-items:center;
+      position:relative;
+      z-index:1;
+    }
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:8px;
+      background:rgba(255,255,255,.68);
+      border:1px solid rgba(200,147,77,.24);
+      color:#734719;
+      padding:9px 14px;border-radius:999px;
+      font-weight:800;font-size:14px;
+      box-shadow:0 10px 28px rgba(111,59,24,.07);
+    }
+    h1{
+      font-family:"Noto Kufi Arabic", sans-serif;
+      font-size:clamp(40px, 5vw, 76px);
+      line-height:1.12;
+      margin:22px 0 18px;
+      color:var(--coffee);
+      letter-spacing:-1.5px;
+    }
+    .hero h1 span{
+      background:linear-gradient(135deg,#7b421d,#c8934d 72%,#f6d58f);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+    .lead{
+      color:#6f5238;
+      font-size:clamp(17px, 2vw, 21px);
+      line-height:2;
+      margin:0 0 26px;
+      max-width:710px;
+    }
+    .hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:30px}
+    .trust-row{display:flex;flex-wrap:wrap;gap:13px}
+    .trust-item{
+      display:flex;align-items:center;gap:8px;
+      background:rgba(255,255,255,.58);
+      border:1px solid rgba(111,59,24,.11);
+      border-radius:17px;
+      padding:10px 13px;
+      color:#5a3823;
+      font-weight:700;
+      box-shadow:0 10px 26px rgba(42,20,9,.05);
+    }
+    .trust-item b{color:var(--oud)}
+
+    .hero-art{
+      min-height:620px;
+      position:relative;
+      display:grid;
+      place-items:center;
+    }
+    .halo{
+      width:min(560px, 92vw);height:min(560px, 92vw);
+      border-radius:50%;
+      background:
+        radial-gradient(circle at 50% 48%, rgba(255,255,255,.92) 0 28%, rgba(255,242,217,.82) 29% 47%, rgba(200,147,77,.22) 48% 60%, transparent 61%),
+        conic-gradient(from 180deg, rgba(111,59,24,.05), rgba(200,147,77,.32), rgba(111,59,24,.08), rgba(243,208,138,.36), rgba(111,59,24,.05));
+      position:absolute;
+      filter:drop-shadow(0 38px 80px rgba(42,20,9,.14));
+    }
+    .incense-card{
+      position:relative;
+      width:min(420px, 82vw);
+      min-height:510px;
+      border-radius:42px;
+      background:linear-gradient(160deg, rgba(58,29,14,.96), rgba(109,58,24,.94) 52%, rgba(201,146,75,.95));
+      padding:28px;
+      box-shadow:0 40px 90px rgba(42,20,9,.3);
+      overflow:hidden;
+      border:1px solid rgba(255,231,183,.32);
+    }
+    .incense-card:before{
+      content:"";position:absolute;inset:14px;border:1px solid rgba(255,239,198,.22);border-radius:32px;pointer-events:none;
+    }
+    .smoke-line{
+      position:absolute;
+      width:78px;height:280px;
+      border:2px solid transparent;
+      border-right-color:rgba(255,245,220,.34);
+      border-radius:50%;
+      top:16px;
+      animation:smoke 5s ease-in-out infinite;
+      opacity:.78;
+    }
+    .s1{right:116px;transform:rotate(8deg)}
+    .s2{right:160px;top:38px;animation-delay:.8s;transform:rotate(-8deg)}
+    .s3{right:208px;top:12px;animation-delay:1.5s;transform:rotate(14deg)}
+    @keyframes smoke{0%,100%{transform:translateY(12px) scaleX(.9);opacity:.42}50%{transform:translateY(-18px) scaleX(1.05);opacity:.86}}
+    .mabkhara{
+      position:absolute;
+      bottom:82px;right:50%;transform:translateX(50%);
+      width:245px;height:185px;
+      background:linear-gradient(145deg,#f6d28e,#9a551f 55%,#4b2410);
+      clip-path:polygon(16% 32%,84% 32%,72% 100%,28% 100%);
+      border-radius:24px;
+      box-shadow:inset 0 14px 24px rgba(255,255,255,.16), 0 34px 46px rgba(0,0,0,.24);
+    }
+    .mabkhara:before{
+      content:"";position:absolute;right:22px;left:22px;top:-16px;height:58px;border-radius:50%;
+      background:linear-gradient(180deg,#fff3d1,#c99045 58%,#5b2c14);
+      box-shadow:inset 0 10px 18px rgba(255,255,255,.35);
+    }
+    .mabkhara:after{
+      content:"";position:absolute;right:72px;left:72px;bottom:-22px;height:54px;background:#34180c;border-radius:0 0 18px 18px;
+    }
+    .oud-chips{position:absolute;right:72px;left:72px;bottom:256px;display:flex;gap:7px;justify-content:center;z-index:2}
+    .chip{width:54px;height:20px;border-radius:99px;background:linear-gradient(90deg,#261007,#6f3817,#190b05);transform:rotate(var(--r));box-shadow:0 8px 18px rgba(0,0,0,.22)}
+    .hero-badge{
+      position:absolute;left:24px;bottom:28px;right:24px;
+      display:flex;justify-content:space-between;gap:12px;align-items:center;
+      padding:15px 17px;border-radius:24px;
+      background:rgba(255,250,241,.88);
+      color:var(--coffee);
+      box-shadow:0 18px 40px rgba(42,20,9,.18);
+    }
+    .hero-badge b{font-size:19px}.hero-badge span{font-size:13px;color:var(--muted);font-weight:700}
+    .floating-note{
+      position:absolute;
+      top:74px;left:5px;
+      background:#fffaf1;
+      border:1px solid rgba(111,59,24,.12);
+      border-radius:22px;
+      padding:13px 16px;
+      box-shadow:0 22px 42px rgba(42,20,9,.14);
+      display:flex;align-items:center;gap:10px;
+      font-weight:800;color:#5a3118;
+    }
+    .floating-note small{display:block;color:var(--muted);font-weight:700;margin-top:3px}
+
+    section{padding:74px 0}
+    .section-head{
+      display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:32px;
+    }
+    .section-title{margin:0;font-family:"Noto Kufi Arabic", sans-serif;font-size:clamp(28px, 3vw, 46px);line-height:1.35;color:var(--coffee);letter-spacing:-.6px}
+    .section-copy{margin:0;color:#795b41;line-height:1.9;font-size:17px;max-width:540px}
+
+    .features{
+      display:grid;grid-template-columns:repeat(4,1fr);gap:16px;
+    }
+    .feature{
+      background:rgba(255,255,255,.68);
+      border:1px solid rgba(111,59,24,.1);
+      border-radius:var(--radius);
+      padding:23px;
+      box-shadow:0 16px 42px rgba(42,20,9,.07);
+    }
+    .icon{
+      width:52px;height:52px;border-radius:18px;
+      display:grid;place-items:center;
+      background:linear-gradient(145deg,#fff0cc,#d2a057);
+      color:var(--coffee);font-size:24px;margin-bottom:16px;
+    }
+    .feature h3{margin:0 0 8px;color:var(--coffee);font-size:19px}.feature p{margin:0;color:#785b43;line-height:1.8}
+
+    .products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .product-card{
+      background:rgba(255,255,255,.78);
+      border:1px solid rgba(111,59,24,.12);
+      border-radius:32px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      position:relative;
+    }
+    .product-img{
+      height:270px;
+      background:
+        radial-gradient(circle at 50% 30%, rgba(255,255,255,.85), transparent 27%),
+        linear-gradient(145deg, #3a1d0e, var(--bg1), var(--bg2));
+      position:relative;
+      display:grid;place-items:center;
+      overflow:hidden;
+    }
+    .product-img:before{
+      content:"";position:absolute;width:250px;height:250px;border:1px solid rgba(255,239,198,.18);border-radius:50%;
+    }
+    .product-img:after{
+      content:"";position:absolute;inset:auto 34px 28px 34px;height:38px;background:rgba(0,0,0,.19);filter:blur(22px);border-radius:50%;
+    }
+    .product-visual{position:relative;z-index:1;width:170px;height:170px;border-radius:34px;background:linear-gradient(135deg,rgba(255,241,207,.72),rgba(255,255,255,.16));border:1px solid rgba(255,239,198,.28);display:grid;place-items:center;transform:rotate(-6deg);box-shadow:0 28px 54px rgba(0,0,0,.23)}
+    .product-visual svg{width:100px;fill:#fff1cf;filter:drop-shadow(0 12px 12px rgba(0,0,0,.18))}
+    .tag{
+      position:absolute;top:18px;right:18px;z-index:2;
+      padding:8px 12px;border-radius:999px;
+      color:#2a1409;background:#f8d891;font-weight:900;font-size:13px;
+    }
+    .product-body{padding:23px}
+    .rating{color:#b9782e;font-weight:800;font-size:14px;margin-bottom:8px}
+    .product-body h3{font-family:"Noto Kufi Arabic";margin:0 0 9px;color:var(--coffee);font-size:22px;line-height:1.5}
+    .product-body p{margin:0 0 18px;color:#72553c;line-height:1.9}
+    .product-meta{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px}
+    .price{font-family:"Noto Kufi Arabic";color:var(--coffee);font-size:22px;font-weight:800}.price small{font-family:inherit;color:var(--muted);font-size:13px}
+    .add-btn{padding:12px 16px;border-radius:16px;background:var(--coffee);color:#fff3d7;border:0;font-weight:900;cursor:pointer;transition:.2s ease}
+    .add-btn:hover{background:#6f3b18;transform:translateY(-2px)}
+
+    .story{
+      display:grid;grid-template-columns:.9fr 1.1fr;gap:24px;align-items:stretch;
+    }
+    .story-panel{
+      background:linear-gradient(145deg, rgba(42,20,9,.96), rgba(91,45,18,.94));
+      border-radius:36px;
+      padding:34px;
+      color:#fff1d1;
+      box-shadow:0 30px 74px rgba(42,20,9,.25);
+      position:relative;overflow:hidden;
+    }
+    .story-panel:before{content:"";position:absolute;left:-80px;top:-80px;width:240px;height:240px;background:radial-gradient(circle,rgba(243,208,138,.24),transparent 70%);border-radius:50%}
+    .story-panel h2{margin:0 0 15px;font-family:"Noto Kufi Arabic";font-size:34px;line-height:1.45}.story-panel p{margin:0;color:#f8dfad;line-height:2;font-size:17px}
+    .rituals{display:grid;gap:14px}
+    .ritual{
+      display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;
+      background:rgba(255,255,255,.7);
+      border:1px solid rgba(111,59,24,.11);
+      border-radius:26px;
+      padding:22px;
+      box-shadow:0 14px 36px rgba(42,20,9,.07);
+    }
+    .step{width:42px;height:42px;border-radius:15px;display:grid;place-items:center;background:#f0c878;color:#2a1409;font-weight:900}.ritual h3{margin:0 0 5px;color:var(--coffee)}.ritual p{margin:0;color:#765940;line-height:1.8}
+
+    .offer{
+      background:linear-gradient(135deg, #2a1409 0%, #6f3b18 58%, #c8934d 100%);
+      border-radius:40px;
+      padding:34px;
+      color:#fff4d8;
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:28px;align-items:center;
+      box-shadow:0 40px 90px rgba(42,20,9,.28);
+      overflow:hidden;position:relative;
+    }
+    .offer:before{content:"";position:absolute;inset:-40% auto auto -20%;width:420px;height:420px;background:radial-gradient(circle,rgba(255,235,185,.28),transparent 70%);border-radius:50%}
+    .offer h2{font-family:"Noto Kufi Arabic";font-size:clamp(28px,3vw,48px);line-height:1.35;margin:0 0 12px}.offer p{line-height:2;margin:0 0 20px;color:#ffe8b6;font-size:18px}.offer-list{display:grid;gap:10px;margin:0;padding:0;list-style:none}.offer-list li{display:flex;gap:10px;align-items:center;font-weight:700}.offer-card{background:rgba(255,250,241,.9);color:var(--coffee);border-radius:30px;padding:28px;position:relative;z-index:1}.offer-card strong{font-size:46px;font-family:"Noto Kufi Arabic"}.offer-card span{color:var(--muted);font-weight:700}.coupon{margin-top:14px;padding:13px 16px;border:1px dashed rgba(42,20,9,.25);border-radius:18px;display:flex;justify-content:space-between;gap:12px;font-weight:900;background:#fff7e8}
+
+    .testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.quote{background:rgba(255,255,255,.72);border:1px solid rgba(111,59,24,.11);border-radius:28px;padding:24px;box-shadow:0 14px 38px rgba(42,20,9,.07)}.quote p{margin:0 0 18px;line-height:1.9;color:#5d402b}.person{display:flex;align-items:center;gap:12px}.avatar{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,#f4d08a,#8a4b22);color:#fff;font-weight:900}.person b{display:block;color:var(--coffee)}.person span{color:var(--muted);font-size:13px;font-weight:700}
+
+    .faq-wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:28px;align-items:start}.faq{display:grid;gap:12px}details{background:rgba(255,255,255,.75);border:1px solid rgba(111,59,24,.1);border-radius:22px;padding:18px 20px;box-shadow:0 12px 30px rgba(42,20,9,.05)}summary{cursor:pointer;font-weight:900;color:var(--coffee);list-style:none;display:flex;justify-content:space-between;gap:15px}summary::-webkit-details-marker{display:none}summary:after{content:"+";font-size:23px;color:var(--oud)}details[open] summary:after{content:"−"}details p{color:#72553c;line-height:1.9;margin:13px 0 0}
+
+    .final-cta{text-align:center;padding-bottom:92px}.final-box{background:rgba(255,255,255,.78);border:1px solid rgba(111,59,24,.11);border-radius:38px;padding:44px 24px;box-shadow:var(--shadow)}.final-box h2{margin:0 0 12px;font-family:"Noto Kufi Arabic";font-size:clamp(30px,3.4vw,52px);line-height:1.35;color:var(--coffee)}.final-box p{margin:0 auto 24px;color:#73563d;line-height:1.9;max-width:720px;font-size:18px}
+
+    footer{padding:28px 0;border-top:1px solid rgba(111,59,24,.1);color:#7d5f44}.footer-row{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}.social{display:flex;gap:10px}.social a{width:38px;height:38px;display:grid;place-items:center;border-radius:50%;background:rgba(255,255,255,.65);border:1px solid rgba(111,59,24,.12);font-weight:900;color:var(--coffee)}
+
+    .cart-drawer{
+      position:fixed;top:0;bottom:0;left:0;width:min(430px,100%);
+      background:#fffaf1;
+      z-index:80;
+      transform:translateX(-105%);
+      transition:.3s ease;
+      box-shadow:30px 0 70px rgba(42,20,9,.22);
+      display:flex;flex-direction:column;
+      border-right:1px solid rgba(111,59,24,.12);
+    }
+    .cart-drawer.open{transform:translateX(0)}
+    .cart-head{padding:22px;border-bottom:1px solid rgba(111,59,24,.11);display:flex;align-items:center;justify-content:space-between}.cart-head h3{margin:0;font-family:"Noto Kufi Arabic";color:var(--coffee)}.close{width:42px;height:42px;border-radius:50%;border:0;background:#f1dfc3;font-size:24px;cursor:pointer;color:var(--coffee)}.cart-items{padding:18px;display:grid;gap:12px;overflow:auto;flex:1}.cart-item{background:white;border:1px solid rgba(111,59,24,.1);border-radius:20px;padding:14px;display:grid;gap:8px}.cart-item-top{display:flex;justify-content:space-between;gap:12px;font-weight:900;color:var(--coffee)}.cart-item small{color:var(--muted);font-weight:700}.cart-foot{padding:20px;border-top:1px solid rgba(111,59,24,.11);display:grid;gap:12px}.total{display:flex;justify-content:space-between;font-weight:900;color:var(--coffee);font-size:18px}.overlay{position:fixed;inset:0;background:rgba(42,20,9,.42);z-index:70;opacity:0;pointer-events:none;transition:.25s ease}.overlay.show{opacity:1;pointer-events:auto}
+
+    .mobile-menu{display:none}
+    @media (max-width: 980px){
+      .links{display:none}.mobile-menu{display:inline-flex}.hero-grid,.story,.offer,.faq-wrap{grid-template-columns:1fr}.hero{padding-top:46px}.hero-art{min-height:530px}.features{grid-template-columns:repeat(2,1fr)}.products-grid,.testimonials{grid-template-columns:1fr 1fr}.section-head{align-items:start;flex-direction:column}.offer-card{max-width:520px}
+    }
+    @media (max-width: 640px){
+      .container{width:min(100% - 24px, 1180px)}.announcement{font-size:13px}.nav{height:70px}.brand span{display:none}.nav-actions .btn-primary{display:none}.cart-pill{padding:9px 11px}.hero h1{letter-spacing:-.8px}.hero-art{min-height:465px}.incense-card{min-height:440px;border-radius:32px}.mabkhara{width:205px;height:158px;bottom:70px}.oud-chips{bottom:224px}.floating-note{top:40px;left:0}.features,.products-grid,.testimonials{grid-template-columns:1fr}.product-img{height:235px}.section{padding:58px 0}.offer,.story-panel{border-radius:28px;padding:24px}.coupon{flex-direction:column}.footer-row{justify-content:center;text-align:center}.social{justify-content:center;width:100%}
+    }
+  </style>
+</head>
+<body>
+  <div class="announcement">توصيل سريع داخل قطر • تغليف هدايا فاخر • دفع عند الاستلام للطلبات المؤهلة</div>
+
+  <header>
+    <nav class="container nav" aria-label="التنقل الرئيسي">
+      <a class="brand" href="#top" aria-label="نفحات قطر">
+        <span class="logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12.1 2.1c2.8 3.1 4.4 5.8 4.4 8.1 0 2.8-2 5-4.5 5s-4.5-2.2-4.5-5c0-2.3 1.7-5 4.6-8.1Zm.1 11.2c1.2 0 2.2-1.1 2.2-2.6 0-1.2-.8-2.8-2.2-4.8-1.5 2-2.3 3.6-2.3 4.8 0 1.5 1 2.6 2.3 2.6ZM5 17.8c3.1 1.6 7.1 1.7 11.9.2.9-.3 1.7.4 1.7 1.2 0 .5-.3 1-.9 1.2-5.4 1.8-10.1 1.7-13.9-.3-.6-.3-.8-1.1-.5-1.7.3-.6 1.1-.9 1.7-.6Z"/></svg>
+        </span>
+        <span>
+          <strong class="kufi">نفحات قطر</strong>
+          <span>عود وبخور فاخر</span>
+        </span>
+      </a>
+      <div class="links" role="list">
+        <a href="#products">المجموعة</a>
+        <a href="#story">التجربة</a>
+        <a href="#offer">العرض</a>
+        <a href="#faq">الأسئلة</a>
+      </div>
+      <div class="nav-actions">
+        <button class="cart-pill" type="button" id="openCart" aria-label="فتح السلة">السلة <span class="cart-count" id="cartCount">0</span></button>
+        <a class="btn btn-primary" href="#products">اطلب الآن</a>
+        <a class="btn btn-ghost mobile-menu" href="#products">تسوّق</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">✦ مختارات خليجية بنفَس قطري فاخر</span>
+          <h1>عود وبخور يملأ مجلسك <span>فخامةً ودفئاً</span></h1>
+          <p class="lead">اكتشف توليفات عود وبخور منتقاة بعناية لمحبي الروائح العميقة: ثبات جميل، دخان ناعم، وتغليف راقٍ يليق بالهدايا والمناسبات في قطر.</p>
+          <div class="hero-cta">
+            <a class="btn btn-gold" href="#products">استعرض المنتجات</a>
+            <a class="btn btn-ghost" href="https://wa.me/97450000000?text=مرحباً، أود طلب عود أو بخور من نفحات قطر" target="_blank" rel="noopener">طلب سريع عبر واتساب</a>
+          </div>
+          <div class="trust-row" aria-label="مميزات الخدمة">
+            <div class="trust-item">🚚 <span>توصيل <b>داخل قطر</b></span></div>
+            <div class="trust-item">🎁 <span>تغليف <b>هدايا</b></span></div>
+            <div class="trust-item">⭐ <span>اختيار <b>خبير</b></span></div>
+          </div>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <div class="halo"></div>
+          <div class="floating-note">أكثر اختياراً<small>بخور المجالس</small></div>
+          <div class="incense-card">
+            <span class="smoke-line s1"></span><span class="smoke-line s2"></span><span class="smoke-line s3"></span>
+            <div class="oud-chips"><span class="chip" style="--r:-12deg"></span><span class="chip" style="--r:8deg"></span><span class="chip" style="--r:-3deg"></span></div>
+            <div class="mabkhara"></div>
+            <div class="hero-badge">
+              <div><b class="kufi">رائحة عميقة</b><span>ثبات وفوحان متوازن</span></div>
+              <div>🔥</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="features">
+          <article class="feature"><div class="icon">🪵</div><h3>عود منتقى</h3><p>درجات عود مناسبة للمجالس، الهدايا، والاستخدام اليومي.</p></article>
+          <article class="feature"><div class="icon">🕌</div><h3>ذوق خليجي</h3><p>توليفات دافئة تناسب أجواء البيت والمجلس والضيافة.</p></article>
+          <article class="feature"><div class="icon">📦</div><h3>تجهيز أنيق</h3><p>تغليف راقٍ جاهز للتقديم مع بطاقة إهداء اختيارية.</p></article>
+          <article class="feature"><div class="icon">💬</div><h3>استشارة قبل الطلب</h3><p>نساعدك تختار الرائحة حسب المناسبة والميزانية.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="products">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">مجموعة مختارة لمحبي الفخامة</h2>
+          <p class="section-copy">بطاقات منتجات واضحة، أسعار بالريال القطري، وأزرار طلب مباشرة تناسب صفحة هبوط للتجارة الإلكترونية.</p>
+        </div>
+        <div class="products-grid">
+          <article class="product-card" style="--bg1:#7b421d;--bg2:#d2a057">
+            <span class="tag">الأكثر مبيعاً</span>
+            <div class="product-img">
+              <div class="product-visual"><svg viewBox="0 0 24 24"><path d="M4 15c3.8-1.2 7.3-3.6 10.6-7.1.7-.8 2-.5 2.3.5.9 2.8-.1 5.7-2.6 7.6-2.7 2-6.4 2.1-10.3-.1-.7-.4-.7-.7 0-.9Zm2.8 3.8c3.8 1.2 7.1.8 9.8-1.2.6-.4 1.4-.3 1.8.3.4.6.3 1.4-.3 1.8-3.4 2.5-7.4 3-12 1.5-.7-.2-1-.9-.8-1.6.2-.7.9-1 1.5-.8Z"/></svg></div>
+            </div>
+            <div class="product-body">
+              <div class="rating">★★★★★ 4.9</div>
+              <h3>بخور مجالس قطر</h3>
+              <p>خلطة دافئة بفوحان واضح، مناسبة لاستقبال الضيوف والمناسبات العائلية.</p>
+              <div class="product-meta">
+                <div class="price">185 <small>ر.ق</small></div>
+                <button class="add-btn" data-name="بخور مجالس قطر" data-price="185">أضف للسلة</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" style="--bg1:#553018;--bg2:#b37335">
+            <span class="tag">فاخر</span>
+            <div class="product-img">
+              <div class="product-visual"><svg viewBox="0 0 24 24"><path d="M7.2 3.5c2.8 2.5 4.1 5 3.8 7.3-.3 2.4-2.3 4.1-4.6 3.8-2.2-.3-3.8-2.4-3.5-4.8.3-2.2 1.7-4.3 4.3-6.3Zm9 1.1c2.2 2.8 3.1 5.2 2.7 7.4-.5 2.6-2.8 4.2-5.1 3.7-2.3-.5-3.7-2.8-3.2-5.3.4-2.1 2.3-4 5.6-5.8ZM5 18.3c4.7 1.5 9 1.4 13-.4.7-.3 1.4 0 1.7.6.3.7 0 1.4-.6 1.7-4.6 2.1-9.6 2.3-14.8.6-.7-.2-1-.9-.8-1.6.2-.7.9-1.1 1.5-.9Z"/></svg></div>
+            </div>
+            <div class="product-body">
+              <div class="rating">★★★★★ 4.8</div>
+              <h3>عود كلمنتان ملكي</h3>
+              <p>قطع عود فاخرة برائحة خشبية عميقة، مثالية لعشاق العود الثقيل.</p>
+              <div class="product-meta">
+                <div class="price">420 <small>ر.ق</small></div>
+                <button class="add-btn" data-name="عود كلمنتان ملكي" data-price="420">أضف للسلة</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" style="--bg1:#8a4b22;--bg2:#e6bc70">
+            <span class="tag">هدية</span>
+            <div class="product-img">
+              <div class="product-visual"><svg viewBox="0 0 24 24"><path d="M8.1 3.2h7.8c1.1 0 2 .9 2 2v2.2h1c1 0 1.8.8 1.8 1.8v1.4c0 .8-.5 1.5-1.2 1.7v6.1c0 1.2-1 2.2-2.2 2.2H6.7c-1.2 0-2.2-1-2.2-2.2v-6.1c-.7-.3-1.2-.9-1.2-1.7V9.2c0-1 .8-1.8 1.8-1.8h1V5.2c0-1.1.9-2 2-2Zm.4 4.2h7V5.7h-7v1.7Zm2.3 2.3H5.7v.7h5.1v-.7Zm2.4 0v.7h5.1v-.7h-5.1Zm-2.4 3.1H7v5.5h3.8v-5.5Zm2.4 0v5.5H17v-5.5h-3.8Z"/></svg></div>
+            </div>
+            <div class="product-body">
+              <div class="rating">★★★★★ 5.0</div>
+              <h3>صندوق هدايا العود</h3>
+              <p>تشكيلة هدايا راقية تجمع البخور والعود مع تغليف فاخر وبطاقة إهداء.</p>
+              <div class="product-meta">
+                <div class="price">295 <small>ر.ق</small></div>
+                <button class="add-btn" data-name="صندوق هدايا العود" data-price="295">أضف للسلة</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="story">
+      <div class="container story">
+        <div class="story-panel">
+          <span class="eyebrow" style="background:rgba(255,244,216,.1);color:#f8d891;border-color:rgba(255,244,216,.18)">من الخشب إلى المجلس</span>
+          <h2>رائحة لا تُشترى عشوائياً… بل تُختار بذوق</h2>
+          <p>في العود والبخور، التفاصيل تصنع الفرق: نوع الخشب، توازن الدخون، هدوء الرائحة بعد الاشتعال، وثبات الأثر في المكان. لذلك صُممت الصفحة لتبيع الإحساس قبل المنتج.</p>
+        </div>
+        <div class="rituals">
+          <article class="ritual"><div class="step">1</div><div><h3>اختيار حسب المناسبة</h3><p>مجلس، هدية، استخدام يومي، أو مناسبة خاصة — كل حالة لها نغمة عطرية مختلفة.</p></div></article>
+          <article class="ritual"><div class="step">2</div><div><h3>تجربة شرائية سريعة</h3><p>السلة مصغّرة داخل الصفحة، والطلب ينتقل مباشرة إلى واتساب برسالة جاهزة.</p></div></article>
+          <article class="ritual"><div class="step">3</div><div><h3>تغليف وتوصيل</h3><p>تجهيز أنيق للطلب مع خيار تغليف الهدايا والتوصيل داخل مناطق قطر.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="offer">
+      <div class="container">
+        <div class="offer">
+          <div>
+            <h2>عرض الافتتاح: رائحة فاخرة بسعر أذكى</h2>
+            <p>اطلب الآن واحصل على تغليف هدية مجاني مع أي طلب يتجاوز 250 ر.ق.</p>
+            <ul class="offer-list">
+              <li>✓ مناسب للهدايا الرسمية والعائلية</li>
+              <li>✓ رسالة واتساب جاهزة بتفاصيل الطلب</li>
+              <li>✓ توصيات حسب الذوق: هادئ، ثقيل، دخوني، أو حلو</li>
+            </ul>
+          </div>
+          <div class="offer-card">
+            <span>كود الخصم</span>
+            <strong>QATAR10</strong>
+            <div class="coupon"><span>خصم 10%</span><span>لفترة محدودة</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">آراء عملائنا</h2>
+          <p class="section-copy">صياغة شهادات قصيرة تزيد الثقة وتدعم قرار الشراء من صفحة واحدة.</p>
+        </div>
+        <div class="testimonials">
+          <article class="quote"><p>“البخور ثابت ورائحته راقية جداً، مناسب للمجلس وما يزعج.”</p><div class="person"><div class="avatar">م</div><div><b>محمد العلي</b><span>الدوحة</span></div></div></article>
+          <article class="quote"><p>“طلبته كهدية، التغليف ممتاز ووصل بسرعة. التجربة مرتبة.”</p><div class="person"><div class="avatar">ن</div><div><b>نورة الكواري</b><span>الوعب</span></div></div></article>
+          <article class="quote"><p>“أحببت أن الاختيار كان حسب ذوقي، عود دافئ وفخم.”</p><div class="person"><div class="avatar">ع</div><div><b>عبدالله المري</b><span>لوسيل</span></div></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container faq-wrap">
+        <div>
+          <span class="eyebrow">أسئلة قبل الطلب</span>
+          <h2 class="section-title" style="margin-top:16px">كل ما يحتاجه العميل قبل الشراء</h2>
+          <p class="section-copy" style="margin-top:12px">قسم الأسئلة يقلل التردد ويرفع معدل التحويل، خصوصاً للمنتجات العطرية التي تعتمد على الذوق.</p>
+        </div>
+        <div class="faq">
+          <details open><summary>هل التوصيل متاح في قطر؟</summary><p>نعم، الصفحة مجهزة لتسويق التوصيل داخل الدوحة ومناطق قطر. يمكنك تعديل سياسة التوصيل والرسوم حسب نشاطك.</p></details>
+          <details><summary>كيف أختار البخور المناسب؟</summary><p>للمجالس اختر الروائح الدخونية الدافئة، وللهدايا اختر التوليفات المتوازنة، وللاستخدام اليومي اختر البخور الهادئ قليل الحدة.</p></details>
+          <details><summary>هل يمكن إضافة تغليف هدايا؟</summary><p>نعم، يمكن إضافة خيار التغليف ضمن الطلب أو عبر رسالة واتساب بعد اختيار المنتج.</p></details>
+          <details><summary>هل الصفحة مرتبطة ببوابة دفع؟</summary><p>هذا النموذج يعمل كسلة بسيطة ترسل الطلب إلى واتساب. يمكن تطويره لاحقاً وربطه ببوابة دفع أو متجر كامل.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="container">
+        <div class="final-box">
+          <h2>اختر رائحة تترك أثراً لا يُنسى</h2>
+          <p>ابدأ بطلب منتج واحد أو اسألنا عن أنسب عود وبخور لمناسبتك. التجربة مصممة لتكون سريعة، فاخرة، وواضحة من أول زيارة.</p>
+          <a class="btn btn-primary" href="#products">تسوّق المجموعة</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div>© <span id="year"></span> نفحات قطر — عود وبخور فاخر</div>
+      <div class="social" aria-label="روابط التواصل">
+        <a href="https://wa.me/97450000000" target="_blank" rel="noopener" aria-label="واتساب">و</a>
+        <a href="#" aria-label="انستغرام">إ</a>
+        <a href="#" aria-label="سناب شات">س</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="سلة الطلب" aria-hidden="true">
+    <div class="cart-head"><h3>سلة الطلب</h3><button class="close" id="closeCart" type="button" aria-label="إغلاق">×</button></div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-foot">
+      <div class="total"><span>الإجمالي</span><span id="cartTotal">0 ر.ق</span></div>
+      <a class="btn btn-primary" id="checkout" target="_blank" rel="noopener">إتمام الطلب عبر واتساب</a>
+      <small style="color:#8a6a4b;line-height:1.7">غيّر رقم واتساب داخل الكود من 97450000000 إلى رقم المتجر الحقيقي.</small>
+    </div>
+  </aside>
+
+  <script>
+    const WHATSAPP_NUMBER = "97450000000"; // استبدله برقم المتجر الحقيقي
+    const cart = [];
+    const cartCount = document.getElementById('cartCount');
+    const cartItems = document.getElementById('cartItems');
+    const cartTotal = document.getElementById('cartTotal');
+    const checkout = document.getElementById('checkout');
+    const drawer = document.getElementById('cartDrawer');
+    const overlay = document.getElementById('overlay');
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function formatQar(value){ return `${value.toLocaleString('ar-QA')} ر.ق`; }
+
+    function renderCart(){
+      cartCount.textContent = cart.reduce((sum, item) => sum + item.qty, 0);
+      const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+      cartTotal.textContent = formatQar(total);
+
+      if(!cart.length){
+        cartItems.innerHTML = `<div class="cart-item"><div class="cart-item-top">السلة فارغة</div><small>أضف منتجاً من المجموعة لإرسال الطلب عبر واتساب.</small></div>`;
+        checkout.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('مرحباً، أود الاستفسار عن منتجات العود والبخور.')}`;
+        return;
+      }
+
+      cartItems.innerHTML = cart.map(item => `
+        <div class="cart-item">
+          <div class="cart-item-top"><span>${item.name}</span><span>${formatQar(item.price * item.qty)}</span></div>
+          <small>الكمية: ${item.qty} × ${formatQar(item.price)}</small>
+        </div>
+      `).join('');
+
+      const order = cart.map(item => `- ${item.name} | الكمية: ${item.qty} | السعر: ${item.price * item.qty} ر.ق`).join('\n');
+      const message = `مرحباً نفحات قطر، أود إتمام الطلب التالي:\n${order}\nالإجمالي: ${total} ر.ق\nالاسم:\nالمنطقة:\nملاحظات:`;
+      checkout.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    }
+
+    function openCart(){
+      drawer.classList.add('open'); overlay.classList.add('show'); drawer.setAttribute('aria-hidden','false');
+    }
+    function closeCart(){
+      drawer.classList.remove('open'); overlay.classList.remove('show'); drawer.setAttribute('aria-hidden','true');
+    }
+
+    document.querySelectorAll('.add-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const name = btn.dataset.name;
+        const price = Number(btn.dataset.price);
+        const existing = cart.find(item => item.name === name);
+        if(existing) existing.qty += 1; else cart.push({ name, price, qty: 1 });
+        renderCart();
+        openCart();
+      });
+    });
+
+    document.getElementById('openCart').addEventListener('click', openCart);
+    document.getElementById('closeCart').addEventListener('click', closeCart);
+    overlay.addEventListener('click', closeCart);
+    renderCart();
+  </script>
+</body>
+</html>
